@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681229011C7633A300142324 /* DragImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681229001C7633A300142324 /* DragImg.swift */; };
 		6869C75F1C761AA200A286B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6869C75E1C761AA200A286B4 /* AppDelegate.swift */; };
 		6869C7611C761AA200A286B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6869C7601C761AA200A286B4 /* ViewController.swift */; };
 		6869C7641C761AA200A286B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6869C7621C761AA200A286B4 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		681229001C7633A300142324 /* DragImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImg.swift; sourceTree = "<group>"; };
 		6869C75B1C761AA200A286B4 /* Monsters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6869C75E1C761AA200A286B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6869C7601C761AA200A286B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				6869C7651C761AA200A286B4 /* Assets.xcassets */,
 				6869C7671C761AA200A286B4 /* LaunchScreen.storyboard */,
 				6869C76A1C761AA200A286B4 /* Info.plist */,
+				681229001C7633A300142324 /* DragImg.swift */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				681229011C7633A300142324 /* DragImg.swift in Sources */,
 				6869C7611C761AA200A286B4 /* ViewController.swift in Sources */,
 				6869C75F1C761AA200A286B4 /* AppDelegate.swift in Sources */,
 			);
@@ -487,6 +491,7 @@
 				6869C7851C761AA200A286B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6869C7861C761AA200A286B4 /* Build configuration list for PBXNativeTarget "MonstersTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				6869C7881C761AA200A286B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6869C7891C761AA200A286B4 /* Build configuration list for PBXNativeTarget "MonstersUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				6869C78B1C761AA200A286B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

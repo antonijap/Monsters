@@ -13,16 +13,17 @@ class ViewController: UIViewController {
     // MARK: Outlets
 
     @IBOutlet weak var monsterImg: UIImageView!
-    
-    
+    @IBOutlet weak var heartImg: DragImg!
+    @IBOutlet weak var foodImg: DragImg!
+        
     // MARK: Properties
     
     var arrayOfImages = [UIImage]()
     
+    // MARK: viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         for num in 1...4 {
             let img = UIImage(named: "idle\(num).png")

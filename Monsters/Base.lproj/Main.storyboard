@@ -69,10 +69,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="isi-kJ-j3W" userLabel="heart and food">
                                 <rect key="frame" x="155" y="129" width="290" height="98"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="nn2-ze-BKV">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="nn2-ze-BKV" customClass="DragImg" customModule="Monsters" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="98"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="pNU-Y9-5lZ">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="pNU-Y9-5lZ" customClass="DragImg" customModule="Monsters" customModuleProvider="target">
                                         <rect key="frame" x="195" y="0.0" width="95" height="98"/>
                                     </imageView>
                                 </subviews>
@@ -147,6 +147,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="foodImg" destination="pNU-Y9-5lZ" id="PxO-NF-6Yk"/>
+                        <outlet property="heartImg" destination="nn2-ze-BKV" id="dNO-bm-KNu"/>
                         <outlet property="monsterImg" destination="1qX-bg-JTr" id="gNC-ie-FTM"/>
                     </connections>
                 </viewController>
