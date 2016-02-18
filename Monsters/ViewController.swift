@@ -12,31 +12,29 @@ class ViewController: UIViewController {
     
     // MARK: Outlets
 
-    @IBOutlet weak var monsterImg: UIImageView!
+    @IBOutlet weak var monsterImg: MonsterImg!
     @IBOutlet weak var heartImg: DragImg!
     @IBOutlet weak var foodImg: DragImg!
         
     // MARK: Properties
     
-    var arrayOfImages = [UIImage]()
+    
+    // MARK: Methods
+    
+    func itemDroppedOnCharacter(notif: AnyObject) {
+        print("Item dropped on character.")
+    }
     
     // MARK: viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for num in 1...4 {
-            let img = UIImage(named: "idle\(num).png")
-            if let img = img {
-                arrayOfImages.append(img)
-            }
-            
-        }
+        foodImg.dropTarget = monsterImg
+        heartImg.dropTarget = monsterImg
         
-        monsterImg.animationImages = arrayOfImages
-        monsterImg.animationDuration = 0.8
-        monsterImg.animationRepeatCount = 0
-        monsterImg.startAnimating()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDroppedOnCharacter:", name: "droppedOnTarget", object: nil)
+
     }
 
 }
