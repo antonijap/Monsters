@@ -97,12 +97,50 @@
                                     <rect key="frame" x="55" y="129" width="290" height="98"/>
                                 </variation>
                             </stackView>
+                            <view hidden="YES" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-0J-noO" userLabel="overlay">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM1-OP-5m0" userLabel="restartGamebtn">
+                                        <rect key="frame" x="203" y="287" width="194" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="194" id="2GU-qT-joZ"/>
+                                            <constraint firstAttribute="height" constant="26" id="GGn-VN-7gN"/>
+                                            <constraint firstAttribute="width" constant="394" id="NAM-TZ-hc1"/>
+                                            <constraint firstAttribute="height" constant="53" id="wBb-J8-gVo"/>
+                                        </constraints>
+                                        <state key="normal" image="restart"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="NAM-TZ-hc1"/>
+                                                <exclude reference="wBb-J8-gVo"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="restartGameBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xt2-4e-hV7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oM1-OP-5m0" firstAttribute="centerX" secondItem="RMT-0J-noO" secondAttribute="centerX" id="0YP-dj-C4Y"/>
+                                    <constraint firstItem="oM1-OP-5m0" firstAttribute="centerY" secondItem="RMT-0J-noO" secondAttribute="centerY" id="aJm-Yp-Epa"/>
+                                    <constraint firstItem="oM1-OP-5m0" firstAttribute="centerX" secondItem="RMT-0J-noO" secondAttribute="centerX" id="eMy-d3-lLp"/>
+                                    <constraint firstItem="oM1-OP-5m0" firstAttribute="centerY" secondItem="RMT-0J-noO" secondAttribute="centerY" id="fGp-zN-gO2"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0YP-dj-C4Y"/>
+                                        <exclude reference="aJm-Yp-Epa"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6i7-rh-A0y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0hE-nc-aAT"/>
                             <constraint firstItem="isi-kJ-j3W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1gU-q5-2s8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0ES-o4-Whj" secondAttribute="bottom" id="AQY-6D-BK1"/>
+                            <constraint firstAttribute="trailing" secondItem="RMT-0J-noO" secondAttribute="trailing" id="Hzs-H8-LM7"/>
                             <constraint firstItem="LJw-bd-cxh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lng-5O-V1T"/>
                             <constraint firstItem="6i7-rh-A0y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="N9V-vr-3iE"/>
                             <constraint firstItem="0ES-o4-Whj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PxF-Gk-HeL"/>
@@ -113,8 +151,11 @@
                             <constraint firstAttribute="trailing" secondItem="0ES-o4-Whj" secondAttribute="trailing" id="gaL-48-ZuS"/>
                             <constraint firstItem="isi-kJ-j3W" firstAttribute="top" secondItem="6i7-rh-A0y" secondAttribute="bottom" constant="21" id="haN-47-aDd"/>
                             <constraint firstItem="1qX-bg-JTr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-40" id="jTA-Qo-ebp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RMT-0J-noO" secondAttribute="bottom" id="kj6-Gd-ehh"/>
+                            <constraint firstItem="RMT-0J-noO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lTo-wI-hfB"/>
                             <constraint firstItem="jQ3-7t-Cas" firstAttribute="centerY" secondItem="6i7-rh-A0y" secondAttribute="centerY" id="oXw-Nt-RVE"/>
                             <constraint firstItem="isi-kJ-j3W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oha-Cd-vtc"/>
+                            <constraint firstItem="RMT-0J-noO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p8o-ID-abb"/>
                             <constraint firstAttribute="trailing" secondItem="isi-kJ-j3W" secondAttribute="trailing" constant="41" id="r4W-P2-cOb"/>
                             <constraint firstItem="isi-kJ-j3W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="soh-PM-e7p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LJw-bd-cxh" secondAttribute="bottom" id="v3B-Gl-H5f"/>
@@ -150,9 +191,11 @@
                         <outlet property="foodImg" destination="pNU-Y9-5lZ" id="PxO-NF-6Yk"/>
                         <outlet property="heartImg" destination="nn2-ze-BKV" id="dNO-bm-KNu"/>
                         <outlet property="monsterImg" destination="1qX-bg-JTr" id="gNC-ie-FTM"/>
+                        <outlet property="overlay" destination="RMT-0J-noO" id="oDX-yn-NnX"/>
                         <outlet property="penalty1Img" destination="z0S-Yg-oSg" id="qfU-FC-Ro9"/>
                         <outlet property="penalty2Img" destination="lPj-1T-h8t" id="Yfd-YV-rNQ"/>
                         <outlet property="penalty3Img" destination="mSu-ZD-Db2" id="nS1-iB-GON"/>
+                        <outlet property="restartGameBtn" destination="oM1-OP-5m0" id="U6d-TE-1UB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -167,6 +210,7 @@
         <image name="heart" width="95" height="98"/>
         <image name="idle1" width="889" height="615"/>
         <image name="livespanel" width="468" height="137"/>
+        <image name="restart" width="697" height="94"/>
         <image name="skull" width="95" height="98"/>
     </resources>
 </document>
