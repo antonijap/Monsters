@@ -1,6 +1,7 @@
 # Monsters
 Game where you feed your monster otherwise it dies.
 
+## Little Preview od UI and functionality
 ![alt tag](http://d.pr/i/WB4w/4Dksmeeq+)
 
 ## How to Play
