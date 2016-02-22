@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
+    @IBOutlet weak var overlay: UIView!
+    @IBOutlet weak var restartGameBtn: UIButton!
         
     // MARK: Properties
     
@@ -28,7 +30,7 @@ class ViewController: UIViewController {
     var penalties = 0
     var timer: NSTimer!
     var isMonsterHappy = false
-    var currentItem: UInt32 = 0
+    var currentItem: Int32 = 0
     var musicPlayer: AVAudioPlayer!
     var sfxBite: AVAudioPlayer!
     var sfxHeart: AVAudioPlayer!
@@ -36,6 +38,19 @@ class ViewController: UIViewController {
     var sfxSkull: AVAudioPlayer!
     
     // MARK: Methods
+    
+    @IBAction func restartGameBtn(sender: UIButton) {
+        overlay.layer.hidden = true
+        restartGameBtn.hidden = true
+        startTimer()
+        monsterImg.playIdleAnimation()
+        penalty1Img.alpha = DIM_ALPHA
+        penalty2Img.alpha = DIM_ALPHA
+        penalty3Img.alpha = DIM_ALPHA
+        isMonsterHappy = false
+        penalties = 0
+        
+    }
     
     func startTimer() {
         if timer != nil {
@@ -69,23 +84,23 @@ class ViewController: UIViewController {
                 gameOver()
             }
             
+            let rand = arc4random_uniform(2)
+            print(rand)
+            
+            if rand == 0 {
+                foodImg.alpha = DIM_ALPHA
+                foodImg.userInteractionEnabled = false
+                heartImg.alpha = OPAQUE
+                heartImg.userInteractionEnabled = true
+            } else if rand == 1 {
+                foodImg.alpha = OPAQUE
+                foodImg.userInteractionEnabled = true
+                heartImg.alpha = DIM_ALPHA
+                heartImg.userInteractionEnabled = false
+            }
         }
-        
-        let rand = arc4random_uniform(2)
-        
-        if rand == 0 {
-            foodImg.alpha = DIM_ALPHA
-            foodImg.userInteractionEnabled = false
-            heartImg.alpha = OPAQUE
-            heartImg.userInteractionEnabled = true
-        } else {
-            foodImg.alpha = OPAQUE
-            foodImg.userInteractionEnabled = true
-            heartImg.alpha = DIM_ALPHA
-            heartImg.userInteractionEnabled = false
-        }
-        
-        currentItem = rand
+
+        currentItem = rand()
         isMonsterHappy = false
         
     }
@@ -94,6 +109,9 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
+        overlay.layer.hidden = false
+        restartGameBtn.hidden = false
+        
     }
     
     func itemDroppedOnCharacter(notif: AnyObject) {
